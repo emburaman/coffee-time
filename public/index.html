@@ -15,6 +15,7 @@
     </noscript>
 
     <button onclick="subscribe()">Subscribe</button>
+    <div id="endpoint"></div>
     <script>
       addEventListener('load', async () => {
         let sw = await navigator.serviceWorker.register('./sw.js')
@@ -27,6 +28,7 @@
           userVisibleOnly: true,
           applicationServerKey: 'BJdxXtQEhXNW_7UB16Xk-2F4hTOl83ob4sbmKdcvFuSTJOy4-862K7DMVdaBkn01LuUvfYpo1stYiSbFHt2_3kI'
         })
+        window.document.getElementById('endpoint').innerHTML = JSON.stringify(push);
         console.log(JSON.stringify(push))
       }
     </script>
